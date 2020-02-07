@@ -2,8 +2,7 @@ import React from 'react';
 import './Menu.scss';
 
 interface IProps {
-  currentStep: number;
-  orderTable :number;
+  orderTable: number;
 }
 
 interface IState {
@@ -18,13 +17,10 @@ export default class Menu extends React.Component<IProps, IState> {
     };
   }
   public render() {
-    if (this.props.currentStep !== 2) {
-        return null;
-      }
     return (
       <div className="menu" id="menu">
-        <div className="menu-header"> 
-  <span className="table-number">table {this.props.orderTable}</span>
+        <div className="menu-header">
+          <span className="table-number">table {this.props.orderTable}</span>
         </div>
         <div className="menu-content">
           <div className="menu-item" id="test2">
@@ -47,7 +43,6 @@ export default class Menu extends React.Component<IProps, IState> {
                   <div className="description mt_s">Muti, Required</div>
                 </div>
               </div>
-
               <div className="price">
                 <div>From $9.00</div>
               </div>

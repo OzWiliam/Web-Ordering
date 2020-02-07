@@ -1,28 +1,28 @@
 @import '../../styles/colors.scss';
 .banner {
-    background-color: $banner-background;
-    box-sizing: border-box;
-    padding: 3rem;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    height: 97px;
-    &__text {
-        color: $dark;
-    }
-    .restaurant-logo {
-        width: auto;
-        max-width: 20rem;
-        max-height: 8rem;
-    }
-    .restaurant-name {
-        text-transform: uppercase;
-    }
-    h1 {
-        display: block;
-        font-size: 2em;
-        margin-inline-start: opx;
-        margin-inline-end: 0px;
-        font-weight: bold;
-    }
+  background-color: $banner-background;
+  box-sizing: border-box;
+  padding: 3rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 97px;
+  &__text {
+    color: $dark;
+  }
+  .restaurant-logo {
+    width: auto;
+    max-width: 20rem;
+    max-height: 8rem;
+  }
+  .restaurant-name {
+    text-transform: uppercase;
+  }
+  h1 {
+    display: block;
+    font-size: 2em;
+    margin-inline-start: opx;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
 }

@@ -1,10 +1,7 @@
 import React from 'react';
 import './Order.scss';
 
-interface IProps {
-  currentStep: number;
-  handleChange: (orderTable: number) => void;
-}
+interface IProps {}
 
 interface IState {
   orderTable: number;
@@ -13,14 +10,13 @@ interface IState {
 export default class Order extends React.Component<IProps, IState> {
   constructor(prop: IProps) {
     super(prop);
-    this.state = {
-      orderTable: 2
-    };
   }
+
+  componentDidMount(){
+    
+  }
+
   public render() {
-    if (this.props.currentStep !== 1) {
-      return null;
-    }
     return (
       <div className="order" id="order">
         <div className="body-content">
@@ -42,7 +38,7 @@ export default class Order extends React.Component<IProps, IState> {
               <button
                 className="btn-ordering"
                 type="button"
-                onClick={() => this.props.handleChange(this.state.orderTable)}
+                onClick={() => this.state.orderTable}
               >
                 Start Ordering
               </button>
