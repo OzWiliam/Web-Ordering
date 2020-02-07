@@ -1,0 +1,79 @@
+@import '../../styles/colors.scss';
+.order {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    font-family: $font-family;
+    * {
+        box-sizing: border-box;
+    }
+    .body-content {
+        padding-top: 2rem;
+        flex-grow: 1;
+        background-color: $order-background-color;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 1.6rem;
+        display: flex;
+        min-height: 250px;
+        .card {
+            border-radius: 2rem;
+            background-color: $card-background-color;
+            padding: 2rem;
+            .form-group {
+                padding: 1.5rem;
+                text-align: center;
+                .lb-table {
+                    font-weight: bold;
+                    font-size: 1.6rem;
+                    display: block;
+                    margin-bottom: 1rem;
+                }
+                .form-control {
+                    border-radius: 1rem;
+                    text-align: center;
+                    display: block;
+                    width: 100%;
+                    padding: 0.6rem 1.2 rem 0.6 rem 1.2rem;
+                    line-height: 2.4rem;
+                    color: #495057;
+                    background-color: #ffffff;
+                    background-clip: padding-box;
+                    border: 1px solid #ced4da;
+                }
+            }
+        }
+        .div-button {
+            padding-top: 1rem;
+            display: block;
+            .btn {
+                min-width: 300px;
+                justify-content: space-between;
+                width: 100%;
+                display: flex;
+                align-items: baseline;
+                padding: 1.5rem;
+                .btn-ordering {
+                    min-width: 170px;
+                    padding-left: 3rem;
+                    padding-right: 3rem;
+                    color: #ffffff;
+                    background-color: $btn-primary-backround-color;
+                    border-color: $btn-primary-border-color;
+                    display: block;
+                    width: 100%;
+                    padding: 1rem 1.6rem;
+                    line-height: 2.2rem;
+                    border-radius: 2.2rem;
+                    font-weight: bold;
+                    border: 1px solid transparent;
+                    cursor: pointer;
+                    user-select: none;
+                }
+            }
+        }
+    }
+}
