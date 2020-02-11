@@ -1,9 +1,7 @@
 import React from 'react';
 import './Menu.scss';
 
-interface IProps {
-  orderTable: number;
-}
+interface IProps {}
 
 interface IState {
   nameFood: string;
@@ -20,7 +18,7 @@ export default class Menu extends React.Component<IProps, IState> {
     return (
       <div className="menu" id="menu">
         <div className="menu-header">
-          <span className="table-number">table {this.props.orderTable}</span>
+          <span className="table-number">table </span>
         </div>
         <div className="menu-content">
           <div className="menu-item" id="test2">
