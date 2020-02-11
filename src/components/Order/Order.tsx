@@ -1,20 +1,23 @@
 import React from 'react';
 import './Order.scss';
+import { Route, Link } from 'react-router-dom';
+import Menu from '../Menu/Menu';
 
 interface IProps {}
 
-interface IState {
-  orderTable: number;
-}
+interface IState {}
 
-export default class Order extends React.Component<IProps, IState> {
+export default class Order extends React.Component<IProps> {
   constructor(prop: IProps) {
     super(prop);
+
+    this.state = { value: '' };
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  componentDidMount(){
-    
-  }
+  handleChange = (e: { target: { value: any; }; }) => {
+    this.setState({ value: e.target.value });
+  };
 
   public render() {
     return (
@@ -28,6 +31,7 @@ export default class Order extends React.Component<IProps, IState> {
                   className="form-control valid"
                   type="number"
                   pattern="\d*"
+                  onChange={this.handleChange}
                 />
               </div>
             </form>
@@ -35,11 +39,7 @@ export default class Order extends React.Component<IProps, IState> {
 
           <div className="div-button">
             <div className="btn">
-              <button
-                className="btn-ordering"
-                type="button"
-                onClick={() => this.state.orderTable}
-              >
+              <button className="btn-ordering" type="button">
                 Start Ordering
               </button>
             </div>

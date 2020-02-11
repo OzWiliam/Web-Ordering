@@ -8,4 +8,3 @@ test('render banner', () => {
   const bannerText = testInstance.findByProps({ className: 'banner_text' });
   expect(bannerText.children).toEqual(['Hello ', 'NGHIA']);
 });
-
