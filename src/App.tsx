@@ -22,7 +22,7 @@ class App extends Component {
           <Banner name=" Famous Pizza " />
           <Switch>
             <Route path="/" exact component={Order}/>
-            <Route path='/menu' component={Menu}/>
+            <Route path='/menu/:orderTable' component={Menu}/>
           </Switch>
         </div>
       </Router>
