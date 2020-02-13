@@ -1,23 +1,32 @@
 import React from 'react';
 import './Order.scss';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, NavLink } from 'react-router-dom';
 import Menu from '../Menu/Menu';
 
-interface IProps {}
+interface IProps {
+}
 
-interface IState {}
+interface IState {
+  orderTable: number;
+}
 
-export default class Order extends React.Component<IProps> {
+export default class Order extends React.Component<IProps, IState> {
   constructor(prop: IProps) {
     super(prop);
-
-    this.state = { value: '' };
+    this.state = { orderTable: 1 };
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleChange = (e: { target: { value: any; }; }) => {
-    this.setState({ value: e.target.value });
+  handleChange = (e: { target: { value: any } }) => {
+    this.setState({ orderTable: e.target.value });
+    console.log('number', );
   };
+
+
+  handleClick() {
+    this.setState(state => ({}));
+  }
 
   public render() {
     return (
@@ -39,9 +48,13 @@ export default class Order extends React.Component<IProps> {
 
           <div className="div-button">
             <div className="btn">
-              <button className="btn-ordering" type="button">
-                Start Ordering
-              </button>
+              <NavLink
+                type="button"
+                className="btn-ordering"
+                to={'/menu/order/'+this.state.orderTable}
+              >
+                <button className="btn-ordering">Start Ordering</button>
+              </NavLink>
             </div>
           </div>
         </div>
