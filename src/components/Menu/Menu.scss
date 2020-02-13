@@ -1,66 +1,66 @@
 @import '../../styles/colors.scss';
 .menu {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  width: 100%;
+  * {
+    box-sizing: border-box;
+  }
+  .menu-header {
+    margin: 1rem;
+  }
+  .menu-content {
+    display: block;
+    min-height: 150px;
+    height: 0;
+  }
+  .box {
     display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    width: 100%;
-    * {
-        box-sizing: border-box;
+    margin: 1rem;
+    background-color: $box-background-color;
+    box-shadow: 0 2px 7px -3px;
+    padding: 1rem;
+    .image {
+      width: 120px;
     }
-    .menu-header {
-        margin: 1rem;
-    }
-    .menu-content {
+    .box-content {
+      flex-grow: 1;
+      .menu-item-header {
+        display: inline-grid;
+        .strong {
+          font-size: 1.9rem;
+          white-space: nowrap;
+          overflow: hidden;
+          display: block;
+          font-weight: bold;
+        }
+      }
+      .menu-item-body {
+        font-size: 1.6rem;
         display: block;
-        min-height: 150px;
-        height: 0;
+        .description {
+          color: $color-grey;
+          max-height: 6rem;
+          white-space: pre-line;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+        }
+      }
     }
-    .box {
-        display: flex;
-        margin: 1rem;
-        background-color: $box-background-color;
-        box-shadow: 0 2px 7px -3px;
-        padding: 1rem;
-        .image {
-            width: 120px;
-        }
-        .box-content {
-            flex-grow: 1;
-            .menu-item-header {
-                display: inline-grid;
-                .h6 {
-                    font-size: 1.9rem;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    display: block;
-                    font-weight: bold;
-                }
-            }
-            .menu-item-body {
-                font-size: 1.6rem;
-                display: block;
-                .description {
-                    color: $color-grey;
-                    max-height: 6rem;
-                    white-space: pre-line;
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                }
-            }
-        }
-        .div {
-            display: block;
-        }
-        .price {
-            border-left: solid 1px $default-border-color;
-            min-width: 130px;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            font-size: 1.6rem;
-            padding-left: 10px;
-            margin-left: 2rem;
-            font-weight: 700;
-        }
+    .div {
+      display: block;
     }
+    .price {
+      border-left: solid 1px $default-border-color;
+      min-width: 130px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      font-size: 1.6rem;
+      padding-left: 10px;
+      margin-left: 2rem;
+      font-weight: 700;
+    }
+  }
 }
