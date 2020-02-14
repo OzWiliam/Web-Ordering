@@ -1,0 +1,46 @@
+.modifier {
+    padding-bottom: .5rem;
+    padding: 1rem;
+    *{
+        box-sizing: border-box;
+    }
+    .div {
+        display: block;
+    }
+    .modifier-item {
+        border-bottom: 3px solid #ffffff;
+        margin-bottom: .5rem;
+        .strong{
+            margin-block-end: .6rem;
+            margin-block-start: .6rem;
+            font-weight: 550;
+            display: block;
+        }
+        .input-style{
+            font-size: 1.7rem;
+            .input[type=radio]{
+                text-rendering: auto;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+                text-indent: 0px;
+                text-shadow: none;
+                display: inline-block;
+                text-align: start;
+                position: absolute;
+                opacity: 0;
+                z-index: -1;
+                background-color: initial;
+                margin: 3px 3px 0px 5px;
+                padding: initial;
+                border: initial;
+            }
+        }
+        .lb-input{
+            display: block;
+            margin: .8rem .16rem;
+            color: #1a6dd7;
+        }
+    }
+
+}

@@ -1,6 +1,23 @@
 export interface IMenuItem {
-  name: string;
+  _id: string;
+  title: string;
   description: string;
   price: number;
-  image: string;
+  imageUrl: string;
+  dietaryRequirements: [{ id: string; itemName: string }];
+  modifierGroups: [
+    {
+      _id: string;
+      description: string;
+      modifierGroupType: 1;
+      modifierItems: [
+        {
+          _id: string;
+          name: string;
+          price: number;
+        }
+      ];
+    }
+  ];
+  categoryId:string
 }

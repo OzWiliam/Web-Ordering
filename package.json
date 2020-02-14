@@ -20,6 +20,7 @@
     "author": "Nghia Nguyen Duc Dai",
     "license": "ISC",
     "dependencies": {
+        "@types/react-router": "^5.1.4",
         "axios": "^0.19.2",
         "core-js": "^3.6.4",
         "react": "^16.12.0",

@@ -8,11 +8,30 @@
     box-sizing: border-box;
   }
   .menu-header {
-    margin: 1rem;
+    background-color: #c8c7cd;
+    display: flex;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    font-weight: 700;
+    padding:1rem;
+    .lb-Order {
+      font-size: 1.8rem;
+      line-height: 2rem;
+      font-weight: 700;
+    }
+    .lb-your-order {
+      color: #ffffff;
+      font-size: 1.8rem;
+      line-height: 2rem;
+      padding-left: 0.5rem;
+      .table-number {
+        text-decoration:underline;
+      }
+    }
   }
   .menu-content {
     display: block;
-    min-height: 150px;
+    min-height: 180px;
     height: 0;
   }
   .box {
@@ -25,41 +44,44 @@
       width: 120px;
     }
     .box-content {
+      padding-left: 2rem;
       flex-grow: 1;
       .menu-item-header {
         display: inline-grid;
         .strong {
           font-size: 1.9rem;
+          font-weight: 700;
           white-space: nowrap;
           overflow: hidden;
           display: block;
           font-weight: bold;
-        }
+          text-overflow: ellipsis;
+    }
       }
       .menu-item-body {
         font-size: 1.6rem;
         display: block;
+        .div {
+          display: block;
+        }
         .description {
           color: $color-grey;
           max-height: 6rem;
           white-space: pre-line;
           display: -webkit-box;
-          -webkit-box-orient: vertical;
+          line-height: 1.5rem;
+          margin-top: .5rem;
+          overflow-y: hidden;
+          -webkit-line-clamp: 4;
         }
       }
     }
-    .div {
-      display: block;
-    }
+
     .price {
-      border-left: solid 1px $default-border-color;
       min-width: 130px;
-      justify-content: center;
-      align-items: center;
       display: flex;
-      font-size: 1.6rem;
-      padding-left: 10px;
-      margin-left: 2rem;
+      font-size: 1.4rem;
+      margin-top: 1rem;
       font-weight: 700;
     }
   }
