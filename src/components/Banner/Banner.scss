@@ -3,7 +3,7 @@
   background-color: $banner-background;
   box-sizing: border-box;
   padding: 3rem;
-  justify-content: center;
+  justify-content: space-evenly;
   display: flex;
   align-items: center;
   height: 97px;
@@ -18,11 +18,12 @@
   .restaurant-name {
     text-transform: uppercase;
   }
-  h1 {
+  .Link {
     display: block;
     font-size: 2em;
     margin-inline-start: opx;
     margin-inline-end: 0px;
     font-weight: bold;
   }
+
 }

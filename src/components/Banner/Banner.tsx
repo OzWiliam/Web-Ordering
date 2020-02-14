@@ -18,12 +18,7 @@ export default class Banner extends React.Component<IProps> {
 
         <div className="restaurant-title">
           <h1 className="title">
-            <Link to="/">
-              <span className="restaurant-name">{this.props.name}</span>
-            </Link>
-            <Link to="/menu">
-              <span>- Beer Garden</span>
-            </Link>
+              <span>Beer Garden</span>
           </h1>
         </div>
       </div>

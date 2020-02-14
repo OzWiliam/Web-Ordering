@@ -9,9 +9,9 @@ import {
   HashRouter
 } from 'react-router-dom';
 import Banner from './components/Banner/Banner';
-import Menu from './components/Menu/Menu';
-import MenuDetail from './components/Menu-Detail/Menu-Detail';
 import Order from './components/Order/Order';
+import Menu from './components/Menu/Menu';
+import Modify from './components/Modify/Modify';
 
 interface IProps {}
 
@@ -20,23 +20,22 @@ interface IState {}
 class App extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
   }
 
   render() {
     return (
       <Router>
-        <div className="App">
+        <HashRouter>
+          <div className="App">
             <Banner name=" Famous Pizza " />
             <Switch>
               <Route path="/" exact component={Order} />
-              <Route path="/menu/:orderTable" component={Menu} />
-              {''}
-              <Route path="/menu/:orderTable/:food" component={MenuDetail} />
-              {''}
+              <Route path="/menu/order" component={Menu} />
+              <Route path="/menu/modify" component={Modify} />
             </Switch>
-        </div>
+          </div>
+        </HashRouter>
       </Router>
     );
   }
