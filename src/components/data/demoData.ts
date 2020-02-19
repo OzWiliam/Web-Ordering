@@ -37,7 +37,7 @@ export const MENU_ITEMS = [
       {
         _id: '5d54cd1ff3a38d0013876b23',
         description: 'Sysnet - Cooking style?',
-        modifierGroupType: 1,
+        modifierGroupType: 2,
         modifierItems: [
           {
             _id: '5d54cd1ff3a38d0013876b20',

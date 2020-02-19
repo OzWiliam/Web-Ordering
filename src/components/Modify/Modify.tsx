@@ -16,49 +16,104 @@ import OrderService from '../../services/OrderService';
 interface IProps {}
 
 interface IState {
-  menuItems: IMenuItem[];
+  price: number;
 }
-
-const menuItems: IMenuItem[] = JSON.parse(JSON.stringify(MENU_ITEMS));
+const currentMenuItem = OrderService.currentMenuItem;
 
 export default class Order extends React.Component<IProps, IState> {
   constructor(prop: IProps) {
     super(prop);
+    // this.state = { price: currentMenuItem.price };
+    // this.handleChange = this.handleChange.bind(this);
   }
 
+  // handleChange = (e: { target: { value: any } }) => {
+  //   this.setState({ price: e.target.value });
+  //   OrderService.price = +e.target.value;
+  // };
+
+  // getUpdatePrice() {
+  //   return this.state.price;
+  // }
+
+  // radioChange = (event: { target: { value: any } }) => {
+  //   this.setState({
+  //     price: event.target.value
+  //   });
+  // };
   public render() {
+    //const price = OrderService.price;
     const currentMenuItem = OrderService.currentMenuItem;
-    if(!currentMenuItem){
-        console.log('Go to Table Page');
-        return ;
+    if (!currentMenuItem) {
+      console.log('Go to Table Page');
+      return;
     }
     console.log(currentMenuItem);
     return (
       <div className="modifier" id="modifier">
-        {menuItems.map((food, i) => {
-          return (
-            <div className="modifier-item" key={i}>
-              {food.modifierGroups.map(function(modify, i) {
-                return (
-                  <div key={i}>
-                    <strong>{modify.description}</strong>
-                    <div className="modifier-body">
-                      {modify.modifierItems.map(function(option, i) {
-                        return (
-                          <div className="input-style" key={i}>
-                            <input name="radioGroup" type="radio" />
-                            <label className="lb_input">{option.name}</label>
-                          </div>
-                        );
-                      })}
-                      ;
-                    </div>
-                  </div>
-                );
-              })}
+        <div className="menu-item" id="test2">
+          <div className="box">
+            <div className="item-image">
+              <div>
+                <img
+                  className="image"
+                  src={currentMenuItem.imageUrl}
+                  alt="test"
+                />
+              </div>
             </div>
-          );
-        })}
+            <div className="box-content">
+              <div className="menu-item-header">
+                <strong>{currentMenuItem.title}</strong>
+              </div>
+              <div className="menu-item-body">
+                <div className="description mt_s">
+                  {currentMenuItem.description}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="modifier-item">
+          {currentMenuItem.modifierGroups.map((modifierGroup, groupIndex) => {
+            return (
+              <div key={groupIndex}>
+                <strong>{modifierGroup.description}</strong>
+                <div className="modifier-body">
+                  {modifierGroup.modifierItems.map(
+                    (modifier, modifierIndex) => {
+                      return (
+                        <div
+                          className="input-style"
+                          key={
+                            'menu_' + groupIndex + 'modifier_' + modifierIndex
+                          }
+                        >
+                          <input
+                            // onChange={this.handleChange}
+                            // checked={this.state.price === modifier.price}
+                            value={modifier.price}
+                            name={'input_' + 'modifierGroup_' + groupIndex}
+                            type="radio"
+                          />
+                          <label className="lb_input">{modifier.name}</label>
+                        </div>
+                      );
+                    }
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="content-footer">
+          <div className="stick-bottom">
+            <div className="total">$ {currentMenuItem.price}</div>
+            <div className="flex-grow">
+              <button className="btn-checkout">Continue to Payment</button>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

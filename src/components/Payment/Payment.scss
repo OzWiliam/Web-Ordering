@@ -1,0 +1,145 @@
+@import '../../styles/colors.scss';
+
+.payment {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  .form-control {
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+  }
+  .content_deskop {
+    height: inherit;
+    overflow-y: hidden;
+    min-height: auto;
+    flex-grow: 1;
+    background-color: #ffffff;
+    width: 100%;
+    padding-bottom: 0;
+    }
+    .order-summary {
+      display: flex;
+      padding: 1.5rem 1rem;
+      font-weight: bold;
+      box-sizing: border-box;
+    }
+    .form-input-customer {
+      display: block;
+      margin-top: 0rem;
+
+      .label {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        .span {
+          margin-bottom: 1rem;
+          color: #cfcdcd;
+        }
+      }
+      .input {
+        display: block;
+        width: 100%;
+        padding: 0.6rem 1.2rem;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: #495057;
+        background-color: #ffffff;
+        background-clip: padding-box;
+        border: #ced4da;
+        border-radius: 0.4rem;
+      }
+    }
+    .term-condition {
+        .strong {
+            font-weight: bold;
+        }
+        .term-condition-content{
+            overflow-y: scroll;
+            max-height: 85px;
+            white-space: pre-line;
+            min-height: 40px;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+            .div {
+                display: block;
+            }
+        }
+    }
+    .input-style {
+        position: relative;
+        display: inline-block;
+        padding: 0 0 0 2rem;
+        line-height: 1.5;
+        cursor: pointer;
+        .input {
+            background-color: #ffffff;
+            border-color: transparent;
+            content: " ";
+            border: 2px solid #bdc3c7;
+            border-radius: 20%;
+            position: absolute;
+            display: block;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+    .div {
+      display: block;
+    }
+    .content-footer {
+        padding: 0;
+        background-color: transparent;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        .stick-bottom {
+            width: 100%;
+            display: flex;
+            bottom: 0;
+            margin-bottom: 0;
+            background-color: #efefef;
+            align-items: baseline;
+            padding: 1.5rem;
+            .btn-back {
+                font-weight: 700;
+                border: solid 2px;
+                padding-left:2.5rem;
+                padding-right: 2.5rem;
+                display: block;
+                width: 100%;
+            }
+            .btn-pay {
+                color: #ffffff;
+                background-color: #3078c0;
+                border-color: #3078c0;
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+  }
+
+.menu-header {
+  background-color: #c8c7cd;
+  display: flex;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  font-weight: 700;
+  padding: 1rem;
+  .lb-Order {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    font-weight: 700;
+  }
+  .lb-your-order {
+    color: #ffffff;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    padding-left: 0.5rem;
+    .table-number {
+      text-decoration: underline;
+    }
+  }
+}

@@ -71,7 +71,7 @@ export default class Menu extends React.Component<IProps, IState> {
           <span className="lb-your-order">
             Your order No Table
             <span className="table-number">
-              <Link to="/">#{orderTable}</Link>
+              <Link to="/menu/payment">#{orderTable}</Link>
             </span>
           </span>
         </div>
