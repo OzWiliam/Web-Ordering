@@ -2,6 +2,7 @@ import { IMenuItem } from '../model/Menu';
 
 class OrderServices {
   private _tableNumber: number;
+  private _price: number;
   private _currentSelectedMenuItem: IMenuItem = null;
   private _selectedMenuItems: Array<IMenuItem> = [];
 
@@ -12,12 +13,20 @@ class OrderServices {
     this._tableNumber = table;
   }
 
+  get price(): number {
+    return this._price;
+  }
+  set price(price: number) {
+    this._price = price;
+  }
+
   get currentMenuItem(): IMenuItem {
     return this._currentSelectedMenuItem;
   }
   set currentMenuItem(menuItem: IMenuItem) {
     this._currentSelectedMenuItem = menuItem;
   }
+  
   
   pushMenuItem(menuItem: IMenuItem) {
     this._selectedMenuItems.push(menuItem);
