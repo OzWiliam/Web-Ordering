@@ -15,7 +15,6 @@ export default class Order extends React.Component<IProps, IState> {
     super(prop);
     this.state = { orderTable: 1 };
     this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange = (e: { target: { value: any } }) => {
@@ -27,11 +26,6 @@ export default class Order extends React.Component<IProps, IState> {
     return this.state.orderTable;
   }
 
-  handleClick() {
-
-    <NavLink type="button" className="btn-ordering" to={'/menu/order/'}>
-  </NavLink>  }
-
   public render() {
     return (
       <div className="order" id="order">
@@ -40,13 +34,22 @@ export default class Order extends React.Component<IProps, IState> {
             <form className=" valid-number">
               <div className="form-group">
                 <label className="lb-table">Please enter table number</label>
-                <input className="form-control valid" type="number" pattern="\d*" onChange={this.handleChange} />
+                <input
+                  className="form-control valid"
+                  type="number"
+                  pattern="\d*"
+                  onChange={this.handleChange}
+                />
               </div>
             </form>
           </div>
           <div className="div-button">
             <div className="btn">
-              <NavLink type="button" className="btn-ordering" to={'/menu/order/'}>
+              <NavLink
+                type="button"
+                className="btn-ordering"
+                to={'/menu/order/'}
+              >
                 <button className="btn-ordering">Start Ordering</button>
               </NavLink>
             </div>

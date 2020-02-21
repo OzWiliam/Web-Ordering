@@ -16,21 +16,23 @@ import OrderService from '../../services/OrderService';
 interface IProps {}
 
 interface IState {
-  price: number;
+  menuItems: IMenuItem[];
 }
 const currentMenuItem = OrderService.currentMenuItem;
 
-export default class Order extends React.Component<IProps, IState> {
+const menuItems: IMenuItem[] = JSON.parse(JSON.stringify(MENU_ITEMS));
+
+export default class Modify extends React.Component<IProps, IState> {
   constructor(prop: IProps) {
     super(prop);
-    // this.state = { price: currentMenuItem.price };
-    // this.handleChange = this.handleChange.bind(this);
+    this.setState({
+      menuItems: [],
+    })
   }
 
-  // handleChange = (e: { target: { value: any } }) => {
-  //   this.setState({ price: e.target.value });
-  //   OrderService.price = +e.target.value;
-  // };
+  onClick = (menuItems: IMenuItem[]) => {
+    OrderService.pushMenuItem(currentMenuItem);
+  };
 
   // getUpdatePrice() {
   //   return this.state.price;
@@ -41,6 +43,7 @@ export default class Order extends React.Component<IProps, IState> {
   //     price: event.target.value
   //   });
   // };
+
   public render() {
     //const price = OrderService.price;
     const currentMenuItem = OrderService.currentMenuItem;
@@ -54,6 +57,9 @@ export default class Order extends React.Component<IProps, IState> {
         <div className="menu-item" id="test2">
           <div className="box">
             <div className="item-image">
+              <NavLink className="closed" to={'/menu/order/'}>
+                <span>X</span>
+              </NavLink>
               <div>
                 <img
                   className="image"
@@ -110,7 +116,13 @@ export default class Order extends React.Component<IProps, IState> {
           <div className="stick-bottom">
             <div className="total">$ {currentMenuItem.price}</div>
             <div className="flex-grow">
-              <button className="btn-checkout">Continue to Payment</button>
+              <NavLink
+                type="button"
+                className="btn-checkout"
+                to={'/menu/order/'}
+              >
+                <button className="btn-checkout">Add to Cart</button>
+              </NavLink>
             </div>
           </div>
         </div>

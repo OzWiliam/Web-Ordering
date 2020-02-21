@@ -27,10 +27,10 @@ class OrderServices {
     this._currentSelectedMenuItem = menuItem;
   }
   
-  
   pushMenuItem(menuItem: IMenuItem) {
     this._selectedMenuItems.push(menuItem);
   }
+  
   removeMenuItem(menuItem: IMenuItem) {
     const findIndex = this._selectedMenuItems.findIndex(
       item => menuItem._id === item._id
