@@ -1,0 +1,159 @@
+@import '../../styles/colors.scss';
+
+.cart {
+  display: block;
+  padding-bottom: 10px;
+  box-shadow: none;
+  flex-grow: 1;
+  background-color: #ffffff;
+  margin-left: 0;
+  .menu-header {
+    background-color: #c8c7cd;
+    display: flex;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+    .lb-Order {
+      font-size: 1.8rem;
+      line-height: 2rem;
+      font-weight: 700;
+    }
+    .lb-your-order {
+      color: #ffffff;
+      font-size: 1.8rem;
+      line-height: 2rem;
+      padding-left: 0.5rem;
+      .table-number {
+        text-decoration: underline;
+      }
+    }
+  }
+  .action {
+    vertical-align: top;
+    padding-top: 0.5rem;
+    .action-button {
+      display: flex;
+      justify-content: space-between;
+    }
+    .button {
+      background-color: red;
+      border: none;
+      color: white;
+      padding: 15px 5px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      border-bottom: solid bisque 2px;
+      width: 100%;
+      height: 100%;
+      font-weight: 900;
+    }
+  }
+
+  .body-content {
+    flex-grow: 1;
+    flex-direction: column;
+    background-color: #ffffff;
+    font-size: 1.6rem;
+    display: flex;
+    .table {
+      .tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+        .tr {
+          display: table-row;
+          .td {
+            display: table-cell;
+            padding: 1rem;
+            border-bottom: black solid 1px;
+            vertical-align: baneline;
+          }
+          .title {
+            margin: 0.5rem 0;
+            font-weight: 700;
+          }
+          .modifier-name {
+            line-height: 2rem;
+            padding: 0.5rem 0;
+            font-size: 1.4rem;
+            color: #808080;
+          }
+          .total {
+            text-align: right;
+            font-weight: 700;
+          }
+        }
+      }
+      .tfoot {
+        display: table-footer-group;
+        vertical-align: middle;
+        border-color: inherit;
+        .total-row {
+          background-color: #f7f7f7;
+        }
+        .td {
+          padding: 1rem;
+          border-bottom: solid 1px #ced4da;
+          vertical-align: baseline;
+        }
+        .span {
+          color: #706f74;
+        }
+      }
+    }
+  }
+  .content-footer {
+    padding: 0;
+    background-color: transparent;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    .div {
+      display: block;
+    }
+    .stick-bottom {
+      width: 100%;
+      display: flex;
+      bottom: 0;
+      background-color: #efefef;
+      align-items: baseline;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      .flex-grow {
+        .btn-back {
+            color: $color-grey;
+            background-color: transparent;
+            display: block;
+            font-size: 1.6rem;
+            line-height: 2rem;
+            margin-right: .5rem;
+            margin-left: .5rem;
+            font-weight: 600;
+            text-align: center;
+            border: 2px solid #ced4da;
+            text-decoration: none;
+          }
+        .btn-pay {
+          color: #ffffff;
+          background-color: #1a6dd7;
+          margin-left: 5rem;
+          display: block;
+          padding: 0.5rem 1.0rem;
+          font-size: 1.6rem;
+          line-height: 2rem;
+          border-radius: 2rem;
+          font-weight: 600;
+          text-align: center;
+          white-space: nowrap;
+          border: 1px solid transparent;
+          text-decoration: none;
+          margin-left: 0;
+        }
+        
+      }
+    }
+  }
+}

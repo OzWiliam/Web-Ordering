@@ -26,8 +26,8 @@ export default class Order extends React.Component<IProps, IState> {
     // this.state = { price: currentMenuItem.price };
     // this.handleChange = this.handleChange.bind(this);
   }
-
   // handleChange = (e: { target: { value: any } }) => {
+
   //   this.setState({ price: e.target.value });
   //   OrderService.price = +e.target.value;
   // };
@@ -41,6 +41,11 @@ export default class Order extends React.Component<IProps, IState> {
   //     price: event.target.value
   //   });
   // };
+
+  onChange() {
+    
+  }
+
   public render() {
     //const price = OrderService.price;
     const currentMenuItem = OrderService.currentMenuItem;
@@ -110,7 +115,13 @@ export default class Order extends React.Component<IProps, IState> {
           <div className="stick-bottom">
             <div className="total">$ {currentMenuItem.price}</div>
             <div className="flex-grow">
-              <button className="btn-checkout">Continue to Payment</button>
+              <NavLink
+                type="button"
+                className="btn-checkout"
+                to={'/menu/order/'}
+              >
+                <button className="btn-checkout">Add to Cart</button>
+              </NavLink>
             </div>
           </div>
         </div>

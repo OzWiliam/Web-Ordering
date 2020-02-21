@@ -28,9 +28,12 @@ export default class Order extends React.Component<IProps, IState> {
   }
 
   handleClick() {
-
-    <NavLink type="button" className="btn-ordering" to={'/menu/order/'}>
-  </NavLink>  }
+    <NavLink
+      type="button"
+      className="btn-ordering"
+      to={'/menu/order/'}
+    ></NavLink>;
+  }
 
   public render() {
     return (
@@ -40,13 +43,22 @@ export default class Order extends React.Component<IProps, IState> {
             <form className=" valid-number">
               <div className="form-group">
                 <label className="lb-table">Please enter table number</label>
-                <input className="form-control valid" type="number" pattern="\d*" onChange={this.handleChange} />
+                <input
+                  className="form-control valid"
+                  type="number"
+                  pattern="\d*"
+                  onChange={this.handleChange}
+                />
               </div>
             </form>
           </div>
           <div className="div-button">
             <div className="btn">
-              <NavLink type="button" className="btn-ordering" to={'/menu/order/'}>
+              <NavLink
+                type="button"
+                className="btn-ordering"
+                to={'/menu/order/'}
+              >
                 <button className="btn-ordering">Start Ordering</button>
               </NavLink>
             </div>

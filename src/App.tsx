@@ -13,6 +13,7 @@ import Order from './components/Order/Order';
 import Menu from './components/Menu/Menu';
 import Modify from './components/Modify/Modify';
 import Payment from './components/Payment/Payment';
+import Cart from './components/Cart/Cart';
 
 interface IProps {}
 
@@ -34,7 +35,8 @@ class App extends Component<IProps, IState> {
               <Route path="/" exact component={Order} />
               <Route path="/menu/order" component={Menu} />
               <Route path="/menu/modify" component={Modify} />
-              <Route path="/menu/payment" component={Payment}/>
+              <Route path="/menu/cart" component={Cart} />
+              <Route path="/menu/payment" component={Payment} />
             </Switch>
           </div>
         </HashRouter>
