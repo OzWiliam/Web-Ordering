@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './Cart.scss';
 import { IMenuItem } from '../../model/Menu';
@@ -23,6 +22,7 @@ export default class Cart extends React.Component<IProps, IState> {
   constructor(prop: IProps) {
     super(prop);
   }
+
   public render() {
     const tableNumber = OrderService.tableNumber;
     return (
@@ -77,12 +77,18 @@ export default class Cart extends React.Component<IProps, IState> {
         <div className="content-footer">
           <div className="stick-bottom">
             <div className="flex-grow">
-              <NavLink type="button"  to={'/menu/order'}>
-                <button className="btn-back flex-grow">View Cart</button>
+              <NavLink type="button" to={'/menu/order'}>
+                <button type="button" className="btn-back flex-grow">
+                  Back
+                </button>
               </NavLink>
             </div>
-            <NavLink type="button" className="btn-pay flex-grow" to={'/menu/payment/'}>
-              <button className="btn-pay">Continue to Payment</button>
+            <NavLink
+              type="button"
+              className="btn-pay flex-grow"
+              to={'/menu/payment/'}
+            >
+              <button>Continue to Payment</button>
             </NavLink>
           </div>
         </div>

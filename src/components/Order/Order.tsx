@@ -15,7 +15,6 @@ export default class Order extends React.Component<IProps, IState> {
     super(prop);
     this.state = { orderTable: 1 };
     this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange = (e: { target: { value: any } }) => {
@@ -25,14 +24,6 @@ export default class Order extends React.Component<IProps, IState> {
 
   getOrderTable() {
     return this.state.orderTable;
-  }
-
-  handleClick() {
-    <NavLink
-      type="button"
-      className="btn-ordering"
-      to={'/menu/order/'}
-    ></NavLink>;
   }
 
   public render() {

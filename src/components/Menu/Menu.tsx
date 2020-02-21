@@ -47,7 +47,6 @@ export default class Menu extends React.Component<IProps, IState> {
               <div className="box-content">
                 <div className="menu-item-header">
                   <strong>
-                    {/* <Link to={'/menu/modify/' + food._id}>{food.title}</Link> */}
                     <Link
                       to={'/menu/modify/'}
                       onClick={() => this.onClickMenuItem(food)}
@@ -74,7 +73,7 @@ export default class Menu extends React.Component<IProps, IState> {
           <span className="lb-your-order">
             Your order No Table
             <span className="table-number">
-              <Link to="/menu/">#{orderTable}</Link>
+              <Link to="/">#{orderTable}</Link>
             </span>
           </span>
         </div>
