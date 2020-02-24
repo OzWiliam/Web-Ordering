@@ -14,17 +14,15 @@ import OrderService from '../../services/OrderService';
 
 interface IProps {}
 
-interface IState {
-  menuItems: IMenuItem[];
-}
+interface IState {}
 
 const menuItems: IMenuItem[] = JSON.parse(JSON.stringify(MENU_ITEMS));
 console.log(menuItems);
+const totalPrice = OrderService.totalPrice;
 
 export default class Menu extends React.Component<IProps, IState> {
   onClickMenuItem = (menuItem: IMenuItem) => {
     OrderService.currentMenuItem = JSON.parse(JSON.stringify(menuItem));
-    console.log(menuItem);
   };
 
   render() {
@@ -69,24 +67,22 @@ export default class Menu extends React.Component<IProps, IState> {
     const orderTable = OrderService.tableNumber;
     return (
       <div className="menu" id="menu">
-        <div className="menu-header"> Order
+        <div className="menu-header">
+          {' '}
+          Order
           <span className="lb-your-order">
             Your order No Table
             <span className="table-number">
-              <Link to="/">#{orderTable}</Link>
+              <Link to="/"> #{orderTable}</Link>
             </span>
           </span>
         </div>
         {menu}
         <div className="content-footer">
           <div className="stick-bottom">
-            <div className="total">$ 9.50</div>
+            <div className="total">$ {totalPrice}</div>
             <div className="flex-grow">
-              <NavLink
-                type="button"
-                className="btn-cart"
-                to={'/menu/cart/'}
-              >
+              <NavLink type="button" className="btn-cart" to={'/menu/cart/'}>
                 <button className="btn-cart">View Cart</button>
               </NavLink>
             </div>

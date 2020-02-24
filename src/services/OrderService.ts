@@ -13,24 +13,35 @@ class OrderServices {
     this._tableNumber = table;
   }
 
-  get price(): number {
-    return this._price;
-  }
-  set price(price: number) {
-    this._price = price;
-  }
-
   get currentMenuItem(): IMenuItem {
     return this._currentSelectedMenuItem;
   }
   set currentMenuItem(menuItem: IMenuItem) {
     this._currentSelectedMenuItem = menuItem;
   }
-  
+
   pushMenuItem(menuItem: IMenuItem) {
     this._selectedMenuItems.push(menuItem);
   }
-  
+
+  get menuItems(): IMenuItem[] {
+    return this._selectedMenuItems || [];
+  }
+
+  get totalPrice(): number {
+    let result = 0;
+    const menuItems = this._selectedMenuItems;
+    menuItems.forEach(menuItem => {
+      let price = menuItem.price;
+      menuItem.modifierGroups.forEach(modifierGroup => {
+        //modifierGroup.
+      });
+      //const quality = menuItem.
+      result += price;
+    });
+    return result;
+  }
+
   removeMenuItem(menuItem: IMenuItem) {
     const findIndex = this._selectedMenuItems.findIndex(
       item => menuItem._id === item._id

@@ -11,20 +11,62 @@ import {
   HashRouter
 } from 'react-router-dom';
 import OrderService from '../../services/OrderService';
+import Order from '../Order/Order';
 
 interface IProps {}
 
 interface IState {
-  menuItems: IMenuItem[];
+  totalPrice: number;
 }
+
+const currentMenuItem = OrderService.currentMenuItem;
+const totalPrice = OrderService.totalPrice;
 
 export default class Cart extends React.Component<IProps, IState> {
   constructor(prop: IProps) {
     super(prop);
+    this.state = {
+      totalPrice: 0
+    };
   }
+
+  // calculateTotal(price: number) {
+  //   this.setState(())
+  // }
 
   public render() {
     const tableNumber = OrderService.tableNumber;
+    const menuItems = OrderService.menuItems;
+    console.log(menuItems);
+    const orderFunctions = menuItems.map((order, i) => {
+      return (
+        <tr key={'item-cart ' + i}>
+          <td>
+            <label className="title">
+              <strong>{order.title}</strong>
+            </label>
+          </td>
+          <td>
+            <span className="total">
+              <strong>${order.price}</strong>
+            </span>
+          </td>
+          <td className="action">
+            <div className="action-button">
+              <button
+                className="button"
+                onClick={() => {
+                  OrderService.removeMenuItem(order);
+                }}
+              >
+                <NavLink to={'/menu/cart/'}>X</NavLink>
+              </button>
+            </div>
+          </td>
+        </tr>
+      );
+    });
+
     return (
       <div className="cart" id="cart">
         <div className="menu-header">
@@ -32,34 +74,13 @@ export default class Cart extends React.Component<IProps, IState> {
           <span className="lb-your-order">
             Your order No Table
             <span className="table-number">
-              <Link to="/">#{tableNumber}</Link>
+              <Link to="/"> #{tableNumber}</Link>
             </span>
           </span>
         </div>
         <div className="body-content">
           <table>
-            <tbody>
-              <tr>
-                <td>
-                  <label className="title">
-                    <strong>Cao Lau</strong>
-                  </label>
-                </td>
-                <td>
-                  <div className="modifier-name">Fried</div>
-                </td>
-                <td>
-                  <span className="total">
-                    <strong>$11.30</strong>
-                  </span>
-                </td>
-                <td className="action">
-                  <div className="action-button">
-                    <button className="button">x</button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
+            <tbody>{orderFunctions}</tbody>
             <tfoot>
               <tr className="total-row">
                 <td>
@@ -68,8 +89,7 @@ export default class Cart extends React.Component<IProps, IState> {
                     <span className="gst">(inc GST)</span>
                   </strong>
                 </td>
-                <td>$35.92</td>
-                <td></td>
+                <td>$ = {totalPrice}</td>
               </tr>
             </tfoot>
           </table>
@@ -88,7 +108,12 @@ export default class Cart extends React.Component<IProps, IState> {
               className="btn-pay flex-grow"
               to={'/menu/payment/'}
             >
-              <button>Continue to Payment</button>
+              <button
+                className="btn-pay flex-grow"
+                // onClick={() => this.TotalPrice}
+              >
+                Continue to Payment
+              </button>
             </NavLink>
           </div>
         </div>

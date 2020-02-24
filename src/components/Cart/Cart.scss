@@ -29,6 +29,24 @@
       }
     }
   }
+
+    .td {
+      display: table-cell;
+      padding: 1rem;
+      border-bottom: black solid 1px;
+      vertical-align: baneline;
+    }
+    .title {
+      margin: 0.5rem 0;
+      font-weight: 700;
+      overflow-y: hidden;
+      color: #808080;
+    }
+
+    .total {
+      text-align: right;
+      font-weight: 700;
+    }
   .action {
     vertical-align: top;
     padding-top: 0.5rem;
@@ -49,9 +67,25 @@
       width: 100%;
       height: 100%;
       font-weight: 900;
+      text-decoration: none;
     }
   }
-
+  .tfoot {
+    display: table-footer-group;
+    vertical-align: middle;
+    border-color: inherit;
+    .total-row {
+      background-color: #f7f7f7;
+    }
+    .td {
+      padding: 1rem;
+      border-bottom: solid 1px #ced4da;
+      vertical-align: baseline;
+    }
+    .span {
+      color: #706f74;
+    }
+  }
   .body-content {
     flex-grow: 1;
     flex-direction: column;
@@ -63,45 +97,6 @@
         display: table-row-group;
         vertical-align: middle;
         border-color: inherit;
-        .tr {
-          display: table-row;
-          .td {
-            display: table-cell;
-            padding: 1rem;
-            border-bottom: black solid 1px;
-            vertical-align: baneline;
-          }
-          .title {
-            margin: 0.5rem 0;
-            font-weight: 700;
-          }
-          .modifier-name {
-            line-height: 2rem;
-            padding: 0.5rem 0;
-            font-size: 1.4rem;
-            color: #808080;
-          }
-          .total {
-            text-align: right;
-            font-weight: 700;
-          }
-        }
-      }
-      .tfoot {
-        display: table-footer-group;
-        vertical-align: middle;
-        border-color: inherit;
-        .total-row {
-          background-color: #f7f7f7;
-        }
-        .td {
-          padding: 1rem;
-          border-bottom: solid 1px #ced4da;
-          vertical-align: baseline;
-        }
-        .span {
-          color: #706f74;
-        }
       }
     }
   }
@@ -124,24 +119,24 @@
       padding-bottom: 1.5rem;
       .flex-grow {
         .btn-back {
-            color: $color-grey;
-            background-color: transparent;
-            display: block;
-            font-size: 1.6rem;
-            line-height: 2rem;
-            margin-right: .5rem;
-            margin-left: .5rem;
-            font-weight: 600;
-            text-align: center;
-            border: 2px solid #ced4da;
-            text-decoration: none;
-          }
+          color: $color-grey;
+          background-color: transparent;
+          display: block;
+          font-size: 1.6rem;
+          line-height: 2rem;
+          margin-right: 0.5rem;
+          margin-left: 0.5rem;
+          font-weight: 600;
+          text-align: center;
+          border: 2px solid #ced4da;
+          text-decoration: none;
+        }
         .btn-pay {
           color: #ffffff;
           background-color: #1a6dd7;
           margin-left: 5rem;
           display: block;
-          padding: 0.5rem 1.0rem;
+          padding: 0.5rem 1rem;
           font-size: 1.6rem;
           line-height: 2rem;
           border-radius: 2rem;
@@ -152,7 +147,6 @@
           text-decoration: none;
           margin-left: 0;
         }
-        
       }
     }
   }
