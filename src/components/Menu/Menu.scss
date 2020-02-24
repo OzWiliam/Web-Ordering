@@ -5,6 +5,7 @@
   flex-grow: 1;
   flex-direction: column;
   width: 100%;
+  text-decoration: none;
   * {
     box-sizing: border-box;
   }
@@ -26,7 +27,7 @@
       line-height: 2rem;
       padding-left: 0.5rem;
       .table-number {
-      text-decoration: none;
+        text-decoration: none;
       }
     }
   }
@@ -79,7 +80,6 @@
         }
       }
     }
-
     .price {
       min-width: 130px;
       display: flex;

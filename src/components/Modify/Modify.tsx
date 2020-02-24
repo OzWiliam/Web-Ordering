@@ -16,42 +16,25 @@ import OrderService from '../../services/OrderService';
 interface IProps {}
 
 interface IState {
-  menuItems: IMenuItem[];
 }
 const currentMenuItem = OrderService.currentMenuItem;
-
-const menuItems: IMenuItem[] = JSON.parse(JSON.stringify(MENU_ITEMS));
-
 export default class Modify extends React.Component<IProps, IState> {
   constructor(prop: IProps) {
     super(prop);
-    this.setState({
-      menuItems: [],
-    })
   }
 
-  onClick = (menuItems: IMenuItem[]) => {
+  onClickSaveData = () => {
     OrderService.pushMenuItem(currentMenuItem);
+    console.log('ok', currentMenuItem);
   };
 
-  // getUpdatePrice() {
-  //   return this.state.price;
-  // }
-
-  // radioChange = (event: { target: { value: any } }) => {
-  //   this.setState({
-  //     price: event.target.value
-  //   });
-  // };
-
   public render() {
-    //const price = OrderService.price;
     const currentMenuItem = OrderService.currentMenuItem;
     if (!currentMenuItem) {
       console.log('Go to Table Page');
       return;
     }
-    console.log(currentMenuItem);
+    console.log('Curren menu', currentMenuItem);
     return (
       <div className="modifier" id="modifier">
         <div className="menu-item" id="test2">
@@ -80,6 +63,7 @@ export default class Modify extends React.Component<IProps, IState> {
             </div>
           </div>
         </div>
+
         <div className="modifier-item">
           {currentMenuItem.modifierGroups.map((modifierGroup, groupIndex) => {
             return (
@@ -96,8 +80,6 @@ export default class Modify extends React.Component<IProps, IState> {
                           }
                         >
                           <input
-                            // onChange={this.handleChange}
-                            // checked={this.state.price === modifier.price}
                             value={modifier.price}
                             name={'input_' + 'modifierGroup_' + groupIndex}
                             type="radio"
@@ -114,15 +96,24 @@ export default class Modify extends React.Component<IProps, IState> {
         </div>
         <div className="content-footer">
           <div className="stick-bottom">
-            <div className="total">$ {currentMenuItem.price}</div>
+            <div className="total" >$ {currentMenuItem.price}</div>
             <div className="flex-grow">
-              <NavLink
-                type="button"
+              <button
                 className="btn-checkout"
-                to={'/menu/order/'}
+                type="button"
+                onClick={() => {
+                  OrderService.pushMenuItem(currentMenuItem);
+                  console.log('ok', currentMenuItem);
+                }}
               >
-                <button className="btn-checkout">Add to Cart</button>
-              </NavLink>
+                <NavLink
+                  type="button"
+                  className="btn-checkout"
+                  to={'/menu/order/'}
+                >
+                Add to Cart
+                </NavLink>
+              </button>
             </div>
           </div>
         </div>

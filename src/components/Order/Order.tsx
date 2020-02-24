@@ -7,24 +7,17 @@ import OrderService from '../../services/OrderService';
 interface IProps {}
 
 interface IState {
-  orderTable: number;
 }
 
 export default class Order extends React.Component<IProps, IState> {
   constructor(prop: IProps) {
     super(prop);
-    this.state = { orderTable: 1 };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange = (e: { target: { value: any } }) => {
-    this.setState({ orderTable: e.target.value });
     OrderService.tableNumber = +e.target.value;
   };
-
-  getOrderTable() {
-    return this.state.orderTable;
-  }
 
   public render() {
     return (

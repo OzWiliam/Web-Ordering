@@ -2,25 +2,31 @@ import React from 'react';
 import './Payment.scss';
 import { IMenuItem } from '../../model/Menu';
 import { MENU_ITEMS } from '../data/demoData';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
 import OrderService from '../../services/OrderService';
 
 interface IProps {}
 
 interface IState {
-  menuItems: IMenuItem[];
+  name: string;
+  tel: string;
+  email: string;
 }
-
-const menuItems: IMenuItem[] = JSON.parse(JSON.stringify(MENU_ITEMS));
-console.log(menuItems);
-
+const totalPrice = OrderService.totalPrice;
+const menuItems = OrderService.menuItems;
 export default class Payment extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
+    super(props);
+    this.state = { name: '', tel: '', email: '' };
+  }
+  //  clickOrder =() {}
+
   public render() {
     const orderTable = OrderService.tableNumber;
-    const price = OrderService.price;
     return (
       <div className="payment" id="payment">
-        <div className="menu-header">Payment
+        <div className="menu-header">
+          Payment
           <span className="lb-your-order">
             Your order No Table
             <span className="table-number">
@@ -30,7 +36,7 @@ export default class Payment extends React.Component<IProps, IState> {
         </div>
         <div className="order_summary">
           <div className="lb_price">
-            <label>$126.75</label>
+            <label>$ {totalPrice}</label>
           </div>
         </div>
         <div className="payment-form">
@@ -38,17 +44,29 @@ export default class Payment extends React.Component<IProps, IState> {
             <form className="form-input-customer">
               <div className="form-group">
                 <label>Name</label>
-                <input className="form-control ng-invalid" type="text" />
+                <input
+                  className="form-control ng-invalid"
+                  value={this.state.name}
+                  type="text"
+                />
               </div>
               <div className="form-group">
                 <label>Mobile No.</label>
                 <span>(Optional)</span>
-                <input className="form-control ng-invalid" type="text" />
+                <input
+                  className="form-control ng-invalid"
+                  value={this.state.tel}
+                  type="text"
+                />
               </div>
               <div className="form-group">
                 <label>Email</label>
                 <span>(Optional)</span>
-                <input className="form-control ng-invalid" type="text" />
+                <input
+                  className="form-control ng-invalid"
+                  value={this.state.email}
+                  type="text"
+                />
               </div>
             </form>
           </div>
@@ -70,11 +88,15 @@ export default class Payment extends React.Component<IProps, IState> {
                 type="button"
                 className="btn btn-link btn-block btn-lg btn-back"
               >
-                Back
+                <NavLink to={'/menu/cart/'}> Back</NavLink>
               </button>
             </div>
             <div className="flex-grow-2">
-              <button type="button" className="btn  btn-primary btn-lg btn">
+              <button
+                type="button"
+                className="btn  btn-primary btn-lg btn"
+                onClick={() => {}}
+              >
                 Pay and Place Order
               </button>
             </div>
