@@ -68,7 +68,6 @@ export default class Menu extends React.Component<IProps, IState> {
     return (
       <div className="menu" id="menu">
         <div className="menu-header">
-          {' '}
           Order
           <span className="lb-your-order">
             Your order No Table

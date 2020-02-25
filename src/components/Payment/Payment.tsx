@@ -4,6 +4,7 @@ import { IMenuItem } from '../../model/Menu';
 import { MENU_ITEMS } from '../data/demoData';
 import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
 import OrderService from '../../services/OrderService';
+import { IOrder } from '../../model/Order';
 
 interface IProps {}
 
@@ -13,13 +14,11 @@ interface IState {
   email: string;
 }
 const totalPrice = OrderService.totalPrice;
-const menuItems = OrderService.menuItems;
+
 export default class Payment extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
-    this.state = { name: '', tel: '', email: '' };
   }
-  //  clickOrder =() {}
 
   public render() {
     const orderTable = OrderService.tableNumber;
@@ -46,7 +45,7 @@ export default class Payment extends React.Component<IProps, IState> {
                 <label>Name</label>
                 <input
                   className="form-control ng-invalid"
-                  value={this.state.name}
+                  // value={OrderService.currentSelectedOrder.contact.name}
                   type="text"
                 />
               </div>
@@ -55,7 +54,7 @@ export default class Payment extends React.Component<IProps, IState> {
                 <span>(Optional)</span>
                 <input
                   className="form-control ng-invalid"
-                  value={this.state.tel}
+                  // value={OrderService.currentSelectedOrder.contact.phone}
                   type="text"
                 />
               </div>
@@ -64,7 +63,7 @@ export default class Payment extends React.Component<IProps, IState> {
                 <span>(Optional)</span>
                 <input
                   className="form-control ng-invalid"
-                  value={this.state.email}
+                  // value={OrderService.currentSelectedOrder.contact.email}
                   type="text"
                 />
               </div>
@@ -95,7 +94,7 @@ export default class Payment extends React.Component<IProps, IState> {
               <button
                 type="button"
                 className="btn  btn-primary btn-lg btn"
-                onClick={() => {}}
+                // onClick={() => {this.onClickPay}}
               >
                 Pay and Place Order
               </button>

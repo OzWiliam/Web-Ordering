@@ -1,14 +1,17 @@
 import { IMenuItem } from '../model/Menu';
+import { IOrder } from '../model/Order';
 
 class OrderServices {
   private _tableNumber: number;
-  private _price: number;
   private _currentSelectedMenuItem: IMenuItem = null;
   private _selectedMenuItems: Array<IMenuItem> = [];
+  private _currentSelectedOrder: IOrder = null;
+  private _selectedOrder: Array<IOrder> = [];
 
   get tableNumber(): number {
     return this._tableNumber;
   }
+
   set tableNumber(table: number) {
     this._tableNumber = table;
   }
@@ -16,6 +19,7 @@ class OrderServices {
   get currentMenuItem(): IMenuItem {
     return this._currentSelectedMenuItem;
   }
+
   set currentMenuItem(menuItem: IMenuItem) {
     this._currentSelectedMenuItem = menuItem;
   }
@@ -26,6 +30,18 @@ class OrderServices {
 
   get menuItems(): IMenuItem[] {
     return this._selectedMenuItems || [];
+  }
+
+  get currentSelectedOrder(): IOrder {
+    return this._currentSelectedOrder;
+  }
+
+  set currentSelectedOrder(order: IOrder) {
+    this._currentSelectedOrder = order;
+  }
+
+  pushOrder(order: IOrder) {
+    this._selectedOrder.push(order);
   }
 
   get totalPrice(): number {
