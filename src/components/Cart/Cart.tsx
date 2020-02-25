@@ -30,10 +30,6 @@ export default class Cart extends React.Component<IProps, IState> {
     };
   }
 
-  // calculateTotal(price: number) {
-  //   this.setState(())
-  // }
-
   public render() {
     const tableNumber = OrderService.tableNumber;
     const menuItems = OrderService.menuItems;
@@ -110,7 +106,6 @@ export default class Cart extends React.Component<IProps, IState> {
             >
               <button
                 className="btn-pay flex-grow"
-                // onClick={() => this.TotalPrice}
               >
                 Continue to Payment
               </button>

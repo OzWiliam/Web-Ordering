@@ -15,18 +15,12 @@ import OrderService from '../../services/OrderService';
 
 interface IProps {}
 
-interface IState {
-}
+interface IState {}
 const currentMenuItem = OrderService.currentMenuItem;
 export default class Modify extends React.Component<IProps, IState> {
   constructor(prop: IProps) {
     super(prop);
   }
-
-  onClickSaveData = () => {
-    OrderService.pushMenuItem(currentMenuItem);
-    console.log('ok', currentMenuItem);
-  };
 
   public render() {
     const currentMenuItem = OrderService.currentMenuItem;
@@ -96,7 +90,7 @@ export default class Modify extends React.Component<IProps, IState> {
         </div>
         <div className="content-footer">
           <div className="stick-bottom">
-            <div className="total" >$ {currentMenuItem.price}</div>
+            <div className="total">$ {currentMenuItem.price}</div>
             <div className="flex-grow">
               <button
                 className="btn-checkout"
@@ -111,7 +105,7 @@ export default class Modify extends React.Component<IProps, IState> {
                   className="btn-checkout"
                   to={'/menu/order/'}
                 >
-                Add to Cart
+                  Add to Cart
                 </NavLink>
               </button>
             </div>
